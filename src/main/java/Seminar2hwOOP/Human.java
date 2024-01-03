@@ -1,8 +1,19 @@
 package Seminar2hwOOP;
 
 public class Human extends Actor {
+    protected int orderNumber;
     public Human(String name) {
         super(name);
+    }
+
+    @Override
+    public void setOrderNumber(int number) {
+        orderNumber=number;
+    }
+
+    @Override
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
     @Override

@@ -7,6 +7,8 @@ public class Main {
         Human human3 = new Human("Савин Сергей");
         Human human4 = new Human("Шаталова Алина");
         Human human5 = new Human("Буянова Ольга");
+        Human human6 = new Human("Антонова Елена");
+        Human human7 = new Human("Рубцов Борис");
         Market market = new Market();
         market.acceptToMarket(human1);
         market.acceptToMarket(human2);
@@ -15,6 +17,10 @@ public class Main {
         System.out.println();
         market.acceptToMarket(human4);
         market.acceptToMarket(human5);
+        market.update();
+        System.out.println();
+        market.acceptToMarket(human6);
+        market.acceptToMarket(human7);
         market.update();
 //        System.out.println(market.marketCustomers);
 

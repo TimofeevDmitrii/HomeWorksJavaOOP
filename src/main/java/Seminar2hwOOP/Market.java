@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Market implements MarketBehaviour{
     protected List<Actor> marketCustomers = new ArrayList<>();
+    protected int currentOrderNumber=0;
+
 
     @Override
     public void acceptToMarket(Actor actor) {
@@ -37,7 +39,8 @@ public class Market implements MarketBehaviour{
     public void takeOrders() {
         for (Actor customer: marketCustomers) {
             if (!customer.isMakeOrder()) {
-                System.out.println("Покупатель ("+customer.getName()+") сделал заказ");
+                customer.setOrderNumber(++currentOrderNumber);
+                System.out.println("Покупатель ("+customer.getName()+") сделал заказ №"+customer.getOrderNumber());
                 customer.setMakeOrder(true);
             }
         }
@@ -47,7 +50,7 @@ public class Market implements MarketBehaviour{
     public void giveOrders() {
         for (Actor customer: marketCustomers) {
             if (!customer.isTakeOrder() && customer.isMakeOrder()) {
-                System.out.println("Покупатель ("+customer.getName()+") получил заказ");
+                System.out.println("Покупатель ("+customer.getName()+") получил заказ №"+customer.getOrderNumber());
                 customer.setTakeOrder(true);
             }
         }

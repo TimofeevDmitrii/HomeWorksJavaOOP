@@ -5,4 +5,6 @@ public interface ActorBehaviour {
     void setTakeOrder(boolean take);
     boolean isMakeOrder();
     boolean isTakeOrder();
+    void setOrderNumber(int number);
+    int getOrderNumber();
 }
