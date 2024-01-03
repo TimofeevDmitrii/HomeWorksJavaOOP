@@ -16,6 +16,7 @@ public class Main {
         market.acceptToMarket(human4);
         market.acceptToMarket(human5);
         market.update();
+//        System.out.println(market.marketCustomers);
 
     }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Market implements MarketBehaviour{
-    List<Actor> marketCustomers = new ArrayList<>();
+    protected List<Actor> marketCustomers = new ArrayList<>();
 
     @Override
     public void acceptToMarket(Actor actor) {
