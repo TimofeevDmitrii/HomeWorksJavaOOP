@@ -1,6 +1,6 @@
 package Seminar2hwOOPalternative;
 
-import java.util.Random;
+
 
 public class HumanOrderPicker extends Actor {
     protected int personnelNumber;
@@ -12,7 +12,6 @@ public class HumanOrderPicker extends Actor {
     }
 
     public void prepareOrder(){
-        Random rnd = new Random();
         // minValue + (int) (Math.random() * (maxValue - minValue + 1)); для нашей задачи minValue=0; maxValue=1
         int readyOrder = (int) (Math.random() * 2); // генерируем числа от 0 до 1: 0 - заказ не готов, 1 - заказ готов
         if (readyOrder==1)
