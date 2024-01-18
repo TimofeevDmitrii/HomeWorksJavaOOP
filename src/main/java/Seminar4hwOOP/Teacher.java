@@ -1,11 +1,12 @@
 package Seminar4hwOOP;
 
 public class Teacher extends User{
+    private static int nextTeacherID=0;
     private int teacherId;
 
-    public Teacher(int teacherId, String firstName, String secondName, String lastName) {
+    public Teacher(String firstName, String secondName, String lastName) {
         super(firstName, secondName, lastName);
-        this.teacherId = teacherId;
+        this.teacherId = nextTeacherID++;
     }
 
     public int getTeacherId() {

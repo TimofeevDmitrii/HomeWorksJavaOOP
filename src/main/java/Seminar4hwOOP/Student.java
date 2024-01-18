@@ -1,11 +1,12 @@
 package Seminar4hwOOP;
 
 public class Student extends User implements Comparable<Student>{
+    private static int nextStudentId=0;
     private int studentId;
 
-    public Student(int studentId, String firstName, String secondName, String lastName) {
+    public Student(String firstName, String secondName, String lastName) {
         super(firstName,secondName,lastName);
-        this.studentId = studentId;
+        this.studentId = nextStudentId++;
     }
 
     public int getStudentId(){return studentId;}

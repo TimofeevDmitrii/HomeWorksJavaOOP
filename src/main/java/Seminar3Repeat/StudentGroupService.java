@@ -6,7 +6,7 @@ import java.util.List;
 
 public class StudentGroupService {
 
-    StudentGroup studentGroup;
+    private StudentGroup studentGroup;
 
     public StudentGroupService(StudentGroup studentGroup){
         this.studentGroup = studentGroup;
