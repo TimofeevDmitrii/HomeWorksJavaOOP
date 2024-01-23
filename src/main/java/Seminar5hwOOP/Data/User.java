@@ -1,6 +1,6 @@
 package Seminar5hwOOP.Data;
 
-public class User {
+public abstract class User {
     private String firstName;
     private String secondName;
     private String lastName;
