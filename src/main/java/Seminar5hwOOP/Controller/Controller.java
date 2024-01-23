@@ -9,14 +9,14 @@ import Seminar5hwOOP.Service.DataService;
 import Seminar5hwOOP.Service.StudGroupService;
 import Seminar5hwOOP.Service.Type;
 import Seminar5hwOOP.View.StudGroupView;
-import Seminar5hwOOP.View.StudentView;
+import Seminar5hwOOP.View.UserView;
 
 import java.util.List;
 
 
 public class Controller {
     private final DataService dataService = new DataService();
-    private final StudentView studentView = new StudentView();
+    private final UserView userView = new UserView();
     private final StudGroupService studGroupService = new StudGroupService();
     private final StudGroupView studGroupView = new StudGroupView();
 
@@ -31,7 +31,7 @@ public class Controller {
     public void printAllStudents(){
         List<Student> studentList = dataService.getAllStudents();
         for(Student student: studentList)
-            studentView.printOnConsole(student);
+            userView.printOnConsole(student);
     }
 
     public List<Student> getAllStudents(){
@@ -52,8 +52,10 @@ public class Controller {
 
     public void isUserInThisGroup(StudyGroup studyGroup, User user){
         if (studGroupService.checkUserInThisGroup(studyGroup, user))
-            System.out.println("В группе №"+studyGroup.getGroupNumber()+" есть пользователь "+user);
+            System.out.print("В группе №" + studyGroup.getGroupNumber() + " есть пользователь ");
         else
-            System.out.println("В группе №"+studyGroup.getGroupNumber()+" нет пользователя "+user);
+            System.out.print("В группе №" + studyGroup.getGroupNumber() + " нет пользователя ");
+
+        userView.printOnConsole(user);
     }
 }

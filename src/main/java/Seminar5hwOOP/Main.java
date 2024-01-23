@@ -55,6 +55,8 @@ public class Main {
         // Проверим работу метода проверки наличия пользователей в группе
         controller.isUserInThisGroup(studyGroup1, studentList1.get(0));
         controller.isUserInThisGroup(studyGroup1, studentList1.get(1));
+        controller.isUserInThisGroup(studyGroup2, allStudentList.get(3));
+        controller.isUserInThisGroup(studyGroup1, allStudentList.get(3));
         controller.isUserInThisGroup(studyGroup2, allTeacherList.get(1));
         controller.isUserInThisGroup(studyGroup1, allTeacherList.get(1));
 
