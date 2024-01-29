@@ -72,9 +72,6 @@ public class Controller {
         return students;
     }
 
-//    public void isStudyDay(Student student, LocalDateTime localDateTime){
-//        System.out.println(student.isStudyDay(localDateTime));
-//    }
 
     public void isStudyDayForStudent(Student student, LocalDateTime inputDate){
         studentService.checkTheDayStatus(student, inputDate);
