@@ -127,19 +127,5 @@ public class Main {
         controllerV2.printAllStudents();
 
 
-
-
-
-
-//        List<User> userList = new ArrayList<>();
-//        PartTimeStudent partTimeStudent1 = new PartTimeStudent("ooo","ttiio", "ppp", 3);
-//        FullTimeStudent fullTimeStudent1 = new FullTimeStudent("ppp","uukl","ollk",1);
-//        Teacher teacher1 = new Teacher("iii","PPP","kkkl",2);
-//        userList.add(partTimeStudent1);
-//        userList.add(fullTimeStudent1);
-//        userList.add(teacher1);
-//        Collections.sort(userList);
-//        for (User user: userList)
-//            System.out.println(user);
     }
 }
