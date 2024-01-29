@@ -12,8 +12,8 @@ public class StudentService implements UserService<Student> {
     }
 
     @Override
-    public void checkTheDayStatus(Student user, LocalDateTime inputDate) {
-        user.isStudyDay(inputDate);
+    public String checkTheDayStatus(Student user, LocalDateTime inputDate) {
+        return user.isStudyDay(inputDate);
     }
 
 

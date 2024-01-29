@@ -35,14 +35,14 @@ public class Controller {
     }
 
     public void createStudent(String firstName, String secondName, String lastName){
-        int nextStudentId = nextIdCounter.countNextStudentId(allUsers);
+        int nextStudentId = nextIdCounter.getFreeId(allUsers, Type.STUDENT);
         Student student =studentService.create(firstName, secondName, lastName, nextStudentId);
         checkUser(student);
         allUsers.add(student);
     }
 
     public void createTeacher(String firstName, String secondName, String lastName){
-        int nextTeacherId = nextIdCounter.countNextTeacherId(allUsers);
+        int nextTeacherId = nextIdCounter.getFreeId(allUsers, Type.TEACHER);
         Teacher teacher = teacherService.create(firstName, secondName, lastName, nextTeacherId);
         checkUser(teacher);
         allUsers.add(teacher);
@@ -73,12 +73,12 @@ public class Controller {
     }
 
 
-    public void isStudyDayForStudent(Student student, LocalDateTime inputDate){
-        studentService.checkTheDayStatus(student, inputDate);
+    public String isStudyDayForStudent(Student student, LocalDateTime inputDate){
+        return studentService.checkTheDayStatus(student, inputDate);
     }
 
-    public void isWorkDayForTeacher(Teacher teacher, LocalDateTime inputDate){
-        teacherService.checkTheDayStatus(teacher, inputDate);
+    public String isWorkDayForTeacher(Teacher teacher, LocalDateTime inputDate){
+        return teacherService.checkTheDayStatus(teacher, inputDate);
     }
 
     public List<Teacher> getAllTeachers(){

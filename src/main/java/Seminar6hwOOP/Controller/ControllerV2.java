@@ -14,14 +14,14 @@ public class ControllerV2 extends Controller {
     }
 
     public void createFullTimeStudent(String firstName, String secondName, String lastName){
-        int nextStudentId = nextIdCounter.countNextStudentId(allUsers);
+        int nextStudentId = nextIdCounter.getFreeId(allUsers, Type.STUDENT);
         FullTimeStudent student = ((StudentServiceV2) studentService).createFullTimeStudent(firstName, secondName, lastName, nextStudentId);
         checkUser(student);
         allUsers.add(student);
     }
 
     public void createPartTimeStudent(String firstName, String secondName, String lastName){
-        int nextStudentId = nextIdCounter.countNextStudentId(allUsers);
+        int nextStudentId = nextIdCounter.getFreeId(allUsers, Type.STUDENT);
         PartTimeStudent student = ((StudentServiceV2) studentService).createPartTimeStudent(firstName, secondName, lastName, nextStudentId);
         checkUser(student);
         allUsers.add(student);

@@ -30,12 +30,12 @@ public class Main {
 ////        IdCounterV2 idCounterV2 = new IdCounterV2();
 //
 //        Controller controller = new Controller(idCounter, studentView, teacherView);
-//        controller.createStudent("ooo","ttiio", "ppp");
-//        controller.createStudent("ppp","uukl","ollk");
-//        controller.createStudent("iii","PPP","kkkl");
-//        controller.createTeacher("iieer","cvjjm","uujo");
-//        controller.createStudent("eewq","jjiiio","nnds");
-//        controller.createTeacher("eerr","ooow","qqac");
+//        controller.createStudent("ooo", "ttiio", "ppp");
+//        controller.createStudent("ppp", "uukl", "ollk");
+//        controller.createStudent("iii", "PPP", "kkkl");
+//        controller.createTeacher("iieer", "cvjjm", "uujo");
+//        controller.createStudent("eewq", "jjiiio", "nnds");
+//        controller.createTeacher("eerr", "ooow", "qqac");
 //        controller.printAllTeachers();
 //        System.out.println();
 //        controller.printAllStudents();
@@ -52,23 +52,23 @@ public class Main {
 //        controller.printStudentGroup(studentGroup1);
 //        System.out.println();
 //
-//        LocalDateTime localDateTime = LocalDateTime.of(2024,01,24,0,0,0);
+//        LocalDateTime localDateTime = LocalDateTime.of(2024, 01, 24, 0, 0, 0);
 //        // для примера возьмем 24.01.2024 - это среда
-//        for (Student student: allStudGroups.get(0)){
-//            System.out.print(student+": ");
-//            controller.isStudyDayForStudent(student, localDateTime);
+//        for (Student student : allStudGroups.get(0)) {
+//            System.out.print(student + ": ");
+//            System.out.println(controller.isStudyDayForStudent(student, localDateTime));
 //        }
 //        System.out.println();
 //
-//        LocalDateTime localDateTime2 = LocalDateTime.of(2024,01,27,0,0,0);
+//        LocalDateTime localDateTime2 = LocalDateTime.of(2024, 01, 27, 0, 0, 0);
 //        // для примера возьмем 27.01.2024 - это суббота
-//        for (Student student: allStudGroups.get(0)){
-//            System.out.print(student+": ");
-//            controller.isStudyDayForStudent(student, localDateTime2);
+//        for (Student student : allStudGroups.get(0)) {
+//            System.out.print(student + ": ");
+//            System.out.println(controller.isStudyDayForStudent(student, localDateTime2));
 //        }
 //        System.out.println();
 //        controller.printAllStudents();
-
+//    }
 
 
 
@@ -113,7 +113,7 @@ public class Main {
         // для примера возьмем 24.01.2024 - это среда
         for (Student student: allStudGroups.get(0)){
             System.out.print(student+": ");
-            controllerV2.isStudyDayForStudent(student, localDateTime);
+            System.out.println(controllerV2.isStudyDayForStudent(student, localDateTime));
         }
         System.out.println();
 
@@ -121,7 +121,7 @@ public class Main {
         // для примера возьмем 24.01.2024 - 27.01.2024 - это суббота
         for (Student student: allStudGroups.get(0)){
             System.out.print(student+": ");
-            controllerV2.isStudyDayForStudent(student, localDateTime2);
+            System.out.println(controllerV2.isStudyDayForStudent(student, localDateTime2));
         }
         System.out.println();
         controllerV2.printAllStudents();

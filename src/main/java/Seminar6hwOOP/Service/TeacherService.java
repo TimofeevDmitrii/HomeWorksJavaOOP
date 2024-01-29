@@ -12,7 +12,7 @@ public class TeacherService implements UserService<Teacher> {
     }
 
     @Override
-    public void checkTheDayStatus(Teacher user, LocalDateTime inputDate) {
-        user.isWorkDay(inputDate);
+    public String checkTheDayStatus(Teacher user, LocalDateTime inputDate) {
+        return user.isWorkDay(inputDate);
     }
 }
