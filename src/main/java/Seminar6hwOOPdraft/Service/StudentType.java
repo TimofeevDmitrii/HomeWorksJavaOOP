@@ -1,4 +1,4 @@
-package Seminar6hwOOP.Service;
+package Seminar6hwOOPdraft.Service;
 
 public enum StudentType {
     PartTimeStudent,

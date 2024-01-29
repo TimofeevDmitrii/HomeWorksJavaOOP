@@ -1,6 +1,6 @@
-package Seminar6hwOOP.Controller;
+package Seminar6hwOOPdraft.Controller;
 
-import Seminar6hwOOP.Data.Teacher;
+import Seminar6hwOOPdraft.Data.Teacher;
 
 public class TeacherController implements UserController<Teacher> {
 

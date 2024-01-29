@@ -1,7 +1,7 @@
-package Seminar6hwOOP.Controller;
+package Seminar6hwOOPdraft.Controller;
 
-import Seminar6hwOOP.Data.User;
-import Seminar6hwOOP.Service.StudentService;
+import Seminar6hwOOPdraft.Data.User;
+import Seminar6hwOOPdraft.Service.StudentService;
 
 public class StudentController implements UserController{
 
