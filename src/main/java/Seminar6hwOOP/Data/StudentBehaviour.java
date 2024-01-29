@@ -1,6 +1,8 @@
 package Seminar6hwOOP.Data;
 
-public interface StudentBehaviour {
+import java.time.LocalDateTime;
 
-    boolean willGoStudy();
+public interface StudentBehaviour {
+    String isStudyDay(LocalDateTime inputDate);
+    boolean passExam();
 }

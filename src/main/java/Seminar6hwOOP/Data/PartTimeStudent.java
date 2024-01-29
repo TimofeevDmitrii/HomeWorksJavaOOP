@@ -1,13 +1,13 @@
 package Seminar6hwOOP.Data;
 
-
-
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 
 public class PartTimeStudent extends Student {
-    public PartTimeStudent(String firstName, String secondName, String lastName) {
-        super(firstName, secondName, lastName);
+
+
+    public PartTimeStudent(String firstName, String secondName, String lastName, int id) {
+        super(firstName, secondName, lastName, id);
     }
 
     @Override
@@ -16,9 +16,9 @@ public class PartTimeStudent extends Student {
         int numOfDay=dayOfWeek.getValue();
 
         if (numOfDay==1 || numOfDay==3 || numOfDay==5)
-            return dayOfWeek+"для студентов заочной формы обучения это учебный день";
+            return dayOfWeek+" - у студентов вечерней формы обучения это учебный день";
         else
-            return dayOfWeek+"для студентов заочной формы обучения это выходной день";
+            return dayOfWeek+" - для студентов вечерней формы обучения это выходной день";
     }
 
     @Override

@@ -1,15 +1,20 @@
 package Seminar6hwOOP.Service;
 
-import Seminar6hwOOP.Data.FullTimeStudent;
-import Seminar6hwOOP.Data.PartTimeStudent;
+import Seminar6hwOOP.Data.Student;
 
-public class StudentService {
+import java.time.LocalDateTime;
 
-    public PartTimeStudent createPartTimeStudent(String firstName, String secondName, String lastName) {
-        return new PartTimeStudent(firstName, secondName, lastName);
+public class StudentService implements UserService<Student> {
+
+    @Override
+    public Student create(String firstName, String secondName, String lastName, int id) {
+        return new Student(firstName,secondName,lastName, id);
     }
 
-    public FullTimeStudent createFullTimeStudent(String firstName, String secondName, String lastName) {
-        return new FullTimeStudent(firstName, secondName, lastName);
+    @Override
+    public void checkTheDayStatus(Student user, LocalDateTime inputDate) {
+        user.isStudyDay(inputDate);
     }
+
+
 }

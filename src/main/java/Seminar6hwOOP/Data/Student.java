@@ -4,16 +4,27 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.Random;
 
-public class Student extends User implements Comparable<Student>, StudentBehaviour{
-    private static int nextStudentId=0;
+public class Student extends User implements Comparable<Student>, StudentBehaviour {
+
+    private int groupNumber;
     private int studentId;
 
-    public Student(String firstName, String secondName, String lastName) {
+    public Student(String firstName, String secondName, String lastName, int id) {
         super(firstName,secondName,lastName);
-        this.studentId = nextStudentId++;
+        this.studentId = id;
     }
 
-    public int getStudentId(){return studentId;}
+    public int getGroupNumber() {
+        return groupNumber;
+    }
+
+    public void setGroupNumber(int groupNumber) {
+        this.groupNumber = groupNumber;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
 
     public void setStudentId(int studentId) {
         this.studentId = studentId;
@@ -22,15 +33,25 @@ public class Student extends User implements Comparable<Student>, StudentBehavio
     @Override
     public String toString() {
         return "Student{" +
-                "studentId=" + studentId +
+                "studentId=" + this.studentId +
                 ", firstName='" + super.getFirstName() + '\'' +
                 ", secondName='" + super.getSecondName() + '\'' +
                 ", lastName='" + super.getLastName() + '\'' +
                 '}';
     }
 
-    public String isStudyDay(LocalDateTime inputDate){
+    @Override
+    public int compareTo(Student o) {
+        if (this.studentId>o.getStudentId())
+            return 1;
+        else if(this.studentId==o.getStudentId())
+            return 0;
+        else
+            return -1;
+    }
 
+    @Override
+    public String isStudyDay(LocalDateTime inputDate) {
         DayOfWeek dayOfWeek = inputDate.getDayOfWeek();
         int numOfDay=dayOfWeek.getValue();
 
@@ -41,17 +62,7 @@ public class Student extends User implements Comparable<Student>, StudentBehavio
     }
 
     @Override
-    public int compareTo(Student o) {
-        if (studentId>o.getStudentId())
-            return 1;
-        else if(studentId==o.getStudentId())
-            return 0;
-        else
-            return -1;
-    }
-
-    @Override
-    public boolean willGoStudy() {
+    public boolean passExam() {
         Random rnd = new Random();
         return rnd.nextBoolean();
     }

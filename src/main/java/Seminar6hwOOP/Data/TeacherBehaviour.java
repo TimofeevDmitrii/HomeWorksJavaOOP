@@ -1,5 +1,8 @@
 package Seminar6hwOOP.Data;
 
+import java.time.LocalDateTime;
+
 public interface TeacherBehaviour {
-    boolean checkHomeWork(Student student);
+    String isWorkDay(LocalDateTime inputDate);
+    String checkExam(Student student);
 }

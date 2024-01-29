@@ -1,9 +1,6 @@
 package Seminar6hwOOP.Service;
 
-import Seminar6hwOOP.Data.Student;
-import Seminar6hwOOP.Data.StudentGroup;
-import Seminar6hwOOP.Data.StudentGroupIterator;
-import Seminar6hwOOP.Data.UserComparator;
+import Seminar6hwOOP.Data.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,13 +8,18 @@ import java.util.List;
 
 public class StudentGroupService {
 
-    private StudentGroup studentGroup;
+    // удален Конструктор и поле для StudentGroup; при необходимости обработки какого-либо
+    // объекта класса StudentGroup будет необходимо передавать его в качестве параметра на вход
+    // какой-либо функции из класса StudentGroupService
 
-    public StudentGroupService(StudentGroup studentGroup){
-        this.studentGroup = studentGroup;
+    public StudentGroup createStudentGroup(Teacher teacher, List<Student> groupList, int groupNumber){
+        StudentGroup studentGroup = new StudentGroup(teacher, groupList, groupNumber);
+        for (Student student: studentGroup)
+            student.setGroupNumber(groupNumber);
+        return studentGroup;
     }
 
-    public void removeStudentByFIO(String firstName, String secondName, String lastName) {
+    public void removeStudentByFIO(StudentGroup studentGroup, String firstName, String secondName, String lastName) {
         StudentGroupIterator studentIterator = new StudentGroupIterator(studentGroup);
 
         while (studentIterator.hasNext()) {
@@ -29,31 +31,18 @@ public class StudentGroupService {
             }
         }
 
-        //Как ни странно, но через ForEach тоже получится удалить, причем и без использования break.
-        //Видимо, потому что это обусловлено логикой работы StudentGroupIterator
-//        for (Student currStudent: studentGroup){
-//        if (currStudent.getFirstName().equals(firstName) &&
-//                currStudent.getSecondName().equals(secondName) &&
-//                currStudent.getLastName().equals(lastName)) {
-//                studentGroup.getGroupList().remove(currStudent);
-//                break;
-//            }
-//        }
 
     }
 
-    public void printStudentGroup(){
-        for (Student student: studentGroup)
-            System.out.println(student);
-    }
+    // printStudentGroup вынесен в StudentGroupView - дополнительный пример Simple responsibility
 
-    public List<Student> getSortedGroupListByID(){
+    public List<Student> getSortedGroupListByID(StudentGroup studentGroup){
         List<Student> sortedStudentList = new ArrayList<>(studentGroup.getGroupList());
         Collections.sort(sortedStudentList);
         return sortedStudentList;
     }
 
-    public List<Student> getSortedGroupListByFIO(){
+    public List<Student> getSortedGroupListByFIO(StudentGroup studentGroup){
         List<Student> sortedStudentList = new ArrayList<>(studentGroup.getGroupList());
         sortedStudentList.sort(new UserComparator());
         return sortedStudentList;

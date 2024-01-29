@@ -1,13 +1,13 @@
 package Seminar6hwOOP.Data;
 
-
-
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 
 public class FullTimeStudent extends Student {
-    public FullTimeStudent(String firstName, String secondName, String lastName) {
-        super(firstName, secondName, lastName);
+
+
+    public FullTimeStudent(String firstName, String secondName, String lastName, int id) {
+        super(firstName, secondName, lastName, id);
     }
 
     @Override
@@ -15,10 +15,14 @@ public class FullTimeStudent extends Student {
         DayOfWeek dayOfWeek = inputDate.getDayOfWeek();
         int numOfDay=dayOfWeek.getValue();
 
-        if (numOfDay<=5)
-            return dayOfWeek+"для студентов очной формы обучения это учебный день";
+        if (numOfDay<=5) {
+            if (numOfDay == 3)
+                return dayOfWeek + " - у студентов очной формы обучения сегодня НИР (научно-исследовательская работа)";
+            else
+                return dayOfWeek + " - для студентов очной формы обучения это учебный день";
+        }
         else
-            return dayOfWeek+"для студентов очной формы обучения это выходной день";
+            return dayOfWeek + " - для студентов очной формы обучения это выходной день";
     }
 
     @Override
