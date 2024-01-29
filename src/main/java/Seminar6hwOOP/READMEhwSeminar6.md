@@ -132,3 +132,6 @@ https://github.com/TimofeevDmitrii/HomeWorksJavaOOP/tree/main/src/main/java/Semi
   на этапе компиляции, что гораздо лучше, чем получить ошибку во время работы. Получение данных объектов в Controller также
   можно также построить через конструктор.
   
+PS. Классы TeacherCollective и TeacherCollectiveService не стал затрагивать при рефакторинге, т.к.
+ проект получается достаточно объемным, поэтому лишь поместил их в нужные папки 
+  
