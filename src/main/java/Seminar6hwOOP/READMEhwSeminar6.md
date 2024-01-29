@@ -124,8 +124,8 @@ https://github.com/TimofeevDmitrii/HomeWorksJavaOOP/tree/main/src/main/java/Semi
 * Также указывая при объявлении переменных нужные параметры в виде реализуемых интерфейсов с соответствующими
   обобщениями(в классе Controller):
 
-  protected UserService<Student> studentService = new StudentService();
-  protected UserService<Teacher> teacherService = new TeacherService();
+  protected UserService\<Student\> studentService = new StudentService();
+  protected UserService\<Teacher\> teacherService = new TeacherService();
   
   мы добьемся того, что в данных переменных будут использоваться объекты такого типа, что они должны будут
   обязательно реализовывать данные интерфейсы; если данное условие не будет выполняться, то мы будем получать ошибки
