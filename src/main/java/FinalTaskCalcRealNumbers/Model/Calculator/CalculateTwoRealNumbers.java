@@ -1,7 +1,20 @@
 package FinalTaskCalcRealNumbers.Model.Calculator;
 
 
-public class CalculateTwoRealNumbers extends CalculatorTwoNumbers {
+import FinalTaskCalcRealNumbers.Model.StrategyTwoNumbers.CountOperation;
+
+public class CalculateTwoRealNumbers{
+
+    private CountOperation countOperation;
+
+
+    public CountOperation getCountOperation() {
+        return countOperation;
+    }
+
+    public void setCountOperation(CountOperation countOperation) {
+        this.countOperation = countOperation;
+    }
 
     private double number1;
     private double number2;
@@ -24,7 +37,7 @@ public class CalculateTwoRealNumbers extends CalculatorTwoNumbers {
     }
 
     public double makeCount() {
-        return super.getCountOperation().count(number1,number2);
+        return countOperation.count(number1,number2);
     }
 
 

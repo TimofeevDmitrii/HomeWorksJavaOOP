@@ -1,10 +1,8 @@
 package FinalTaskCalcRealNumbers.Model;
 
 import FinalTaskCalcRealNumbers.Model.Calculator.CalculateTwoRealNumbers;
-import FinalTaskCalcRealNumbers.Model.Calculator.CalculatorTwoNumbers;
 import FinalTaskCalcRealNumbers.Model.Calculator.Operations;
 import FinalTaskCalcRealNumbers.Model.GetData.GetDataToCalculate;
-import jdk.dynalink.Operation;
 
 public class ModelCalcTwoRealNum extends ModelCalculator{
 
