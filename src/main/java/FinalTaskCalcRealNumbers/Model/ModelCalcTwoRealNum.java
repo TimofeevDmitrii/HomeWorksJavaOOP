@@ -12,9 +12,7 @@ public class ModelCalcTwoRealNum extends ModelCalculator{
     public void work(){
         getDataForCount.getData();
         calculator.setCountOperation(getDataForCount.getTheOperation());
-        calculator.setNumber1(getDataForCount.getFirstNumber());
-        calculator.setNumber2(getDataForCount.getSecondNumber());
-        result=calculator.makeCount();
+        result=calculator.makeCount(getDataForCount.getFirstNumber(),getDataForCount.getSecondNumber());
     }
 
     public double getResult(){
