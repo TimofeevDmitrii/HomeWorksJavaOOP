@@ -10,7 +10,6 @@ public class ModelCalcTwoRealNum extends ModelCalculator{
 
     private CalculateTwoRealNumbers calculator = new CalculateTwoRealNumbers();
     private GetDataToCalculate getDataForCount = new GetDataToCalculate(new Operations());
-    private double result;
 
     public void work(){
         getDataForCount.getData();

@@ -7,19 +7,19 @@ import FinalTaskCalcRealNumbers.View.SendToConsole;
 
 public class Controller {
 
-    ModelCalcTwoRealNum modelCalcTwoNum;
+    ModelCalculator modelCalcNum;
     SendToConsole view;
 
-    public Controller(ModelCalcTwoRealNum modelCalcTwoRealNum, SendToConsole view) {
-        this.modelCalcTwoNum = modelCalcTwoRealNum;
+    public Controller(ModelCalculator modelCalcNum, SendToConsole view) {
+        this.modelCalcNum = modelCalcNum;
         this.view = view;
     }
 
     public void start(){
         while (true) {
-            modelCalcTwoNum.work();
-            view.sendMessageToConsole(modelCalcTwoNum.getCurrentDataToPrint());
-            view.sendResultToConsole(modelCalcTwoNum.getResult());
+            modelCalcNum.work();
+            view.sendMessageToConsole(modelCalcNum.getCurrentDataToPrint());
+            view.sendResultToConsole(modelCalcNum.getResult());
         }
     }
 
