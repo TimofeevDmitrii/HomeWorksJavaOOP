@@ -98,7 +98,6 @@ public class GetDataToCalculate implements GetTwoNumExpression {
         sb.append(currStringOperation);
         sb.append(prepareNumberToPrint(number2));
         sb.append("\n"+"Выбрана операция: "+getTheOperation());
-//        System.out.println(sb);
         return sb.toString();
     }
 }
